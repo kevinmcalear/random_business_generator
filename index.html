@@ -4,11 +4,68 @@
   <meta charset="utf-8">
   <title>Random Business Generator</title>
   <meta name="description" content="Random Business Generator">
+  <style>
+    body {
+      text-align: center;
+    }
+    #button {
+      border: 1px solid black;
+      cursor: pointer;
+      display: inline-block;
+      padding: 20px 50px;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; 
+    }
+  </style>
 </head>
-
 <body>
-  <h1>Random Business Generator</h1>
+  <h1 id="name"></h1>
+  <p id="description"></p>
+  <div id="button">Another One</div>
+  <ul>
+    <li>
+      <img src="">
+      <p>Chris Tieri</p>
+    </li>
+    <li>
+      <img src="">
+      <p>Kevin McAlear</p>
+    </li>
+    <li>
+      <img src="">
+      <p>Scott Kahan</p>
+    </li>
+    <li>
+      <img src="">
+      <p>Karin Elias</p>
+    </li>
+    <li>
+      <img src="">
+      <p>Daniel Demuro</p>
+    </li>
+  </ul>
   <script>
+    const businessIdeas = [
+      {name: 'test', description: 'Hello, this is a test!'},
+      {name: 'test1', description: 'Hello, laksdfj;akf is a test!'},
+      {name: 'test2', description: 'asjdf;lajksdf, this is a test!'},
+      {name: 'test3', description: 'Ha;sdkfj;alsdkfj!'}
+    ];
+    const nameEl = document.getElementById('name');
+    const descEl = document.getElementById('description');
+    const buttonEl = document.getElementById('button');
+    const getNewBusinessIdea = () => {
+      let randomBusinessIdea = businessIdeas[Math.floor(Math.random()*businessIdeas.length)];
+      nameEl.innerText = randomBusinessIdea.name;
+      descEl.innerText = randomBusinessIdea.description;
+    };
+
+    buttonEl.addEventListener("click", getNewBusinessIdea);
+    getNewBusinessIdea();
 
   </script>
 </body>
