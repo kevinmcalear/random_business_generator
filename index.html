@@ -5,8 +5,10 @@
   <title>Random Business Generator</title>
   <meta name="description" content="Random Business Generator">
   <style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
     body {
       text-align: center;
+      font-family: 'Raleway', sans-serif;
     }
     #button {
       border: 1px solid black;
@@ -18,7 +20,17 @@
       -khtml-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
-      user-select: none; 
+      user-select: none;
+    }
+    img {
+      height: 50px;
+      width: 50px;
+      border: 1px solid black;
+      border-radius: 50%;
+    }
+    li {
+      display: inline-block;
+      padding: 0 20px;
     }
   </style>
 </head>
@@ -28,23 +40,23 @@
   <div id="button">Another One</div>
   <ul>
     <li>
-      <img src="">
+      <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/christieri/120/283_1.png">
       <p>Chris Tieri</p>
     </li>
     <li>
-      <img src="">
+      <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/kevinmcalear/120/120_1.png">
       <p>Kevin McAlear</p>
     </li>
     <li>
-      <img src="">
+      <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/scottkahan/120/127_1.png">
       <p>Scott Kahan</p>
     </li>
     <li>
-      <img src="">
+      <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/karinelias/120/219_1.png">
       <p>Karin Elias</p>
     </li>
     <li>
-      <img src="">
+      <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/dandemuro/120/193_1.png">
       <p>Daniel Demuro</p>
     </li>
   </ul>
@@ -60,7 +72,7 @@
     const buttonEl = document.getElementById('button');
     const getNewBusinessIdea = () => {
       let randomBusinessIdea = businessIdeas[Math.floor(Math.random()*businessIdeas.length)];
-      nameEl.innerText = randomBusinessIdea.name;
+      nameEl.innerText = randomBusinessIdea.name.toUpperCase();
       descEl.innerText = randomBusinessIdea.description;
     };
 
