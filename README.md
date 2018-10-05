@@ -1,1 +1,1 @@
-# random_business_generator
+# Random Business Generator
