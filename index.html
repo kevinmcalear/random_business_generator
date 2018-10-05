@@ -4,11 +4,17 @@
   <meta charset="utf-8">
   <title>Random Business Generator</title>
   <meta name="description" content="Random Business Generator">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     @import url('https://fonts.googleapis.com/css?family=Raleway');
     body {
       text-align: center;
       font-family: 'Raleway', sans-serif;
+      margin: 0;
+    }
+    h1 {
+      font-size: 40px;
+      margin-bottom: 30px;
     }
     #button {
       border: 1px solid black;
@@ -21,51 +27,481 @@
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
+      position: relative;
+      left: 0;
+      right: 0;
+      max-width: 150px;
+      margin: 30px auto;
     }
     img {
       height: 50px;
       width: 50px;
-      border: 1px solid black;
+      border: 1px solid white;
       border-radius: 50%;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
     }
     li {
       display: inline-block;
       padding: 0 20px;
     }
+    #credits {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #efefef;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .name {
+      font-size: 11px;
+      margin-top: 2px;
+    }
+    #container {
+      max-width: 700px;
+      margin: 0 auto;
+      z-index: 1;
+      background: white;
+      position: relative;
+      padding: 12px;
+    }
+    #description {
+      line-height: 25px;
+    }
   </style>
 </head>
 <body>
-  <h1 id="name"></h1>
-  <p id="description"></p>
-  <div id="button">Another One</div>
-  <ul>
-    <li>
-      <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/christieri/120/283_1.png">
-      <p>Chris Tieri</p>
-    </li>
-    <li>
-      <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/kevinmcalear/120/120_1.png">
-      <p>Kevin McAlear</p>
-    </li>
-    <li>
-      <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/scottkahan/120/127_1.png">
-      <p>Scott Kahan</p>
-    </li>
-    <li>
-      <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/karinelias/120/219_1.png">
-      <p>Karin Elias</p>
-    </li>
-    <li>
-      <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/dandemuro/120/193_1.png">
-      <p>Daniel Demuro</p>
-    </li>
-  </ul>
+  <div id="container">
+    <h1 id="name"></h1>
+    <p id="description"></p>
+    <div id="button">Another One</div>
+  </div>
+  <div id="credits">
+    <p>These business ideas were created by the following individuals a few hours during the <a href="https://altmba.com/" target="_blank">altMBA</a>.</p>
+    <ul>
+      <li>
+        <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/christieri/120/283_1.png">
+        <p class="name">Chris Tieri</p>
+      </li>
+      <li>
+        <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/kevinmcalear/120/120_1.png">
+        <p class="name">Kevin McAlear</p>
+      </li>
+      <li>
+        <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/scottkahan/120/127_1.png">
+        <p class="name">Scott Kahan</p>
+      </li>
+      <li>
+        <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/karinelias/120/219_1.png">
+        <p class="name">Karin Elias</p>
+      </li>
+      <li>
+        <img src="https://discourse-cdn-sjc1.com/business6/user_avatar/altmba26.altmba.com/dandemuro/120/193_1.png">
+        <p class="name">Daniel Demuro</p>
+      </li>
+    </ul>
+  </div>
   <script>
     const businessIdeas = [
-      {name: 'test', description: 'Hello, this is a test!'},
-      {name: 'test1', description: 'Hello, laksdfj;akf is a test!'},
-      {name: 'test2', description: 'asjdf;lajksdf, this is a test!'},
-      {name: 'test3', description: 'Ha;sdkfj;alsdkfj!'}
+      {
+        "name": "Massage School",
+        "description": "A one week intensive program where you learn not how to give massages, but how to receive them. This is for those who have a hard time relaxing and are ready to invest into receiving joy, and letting it….alll…..melt….awaaaaay.\nThe key resources would be staff whose giving the massage in assembly line style\nThe model is different from your average massage school where as you’re not paying for the best massage of your life, and one on one attention. The massuse can work on upto 10 people at a time circling around the room\nThe magic is in the consistency of a week of dedicating oneself to learning how to receive massage."
+      },
+      {
+        "name": "Building renovation company",
+        "description": "Service Turnaround Homes Abadned, Foreclosed of Undesriable with crowd funded, or micro grants from township or neighborhool. Propertiy suggestions are voted on by community\nRehab to make attractive, utilitarian with the lowest investment possible\nKEY Partners - Municipalities, and governments, \nRevenue Stream- Flat Fee Per Home Project + Cost of Project & label  x’s 10%, MIN $10K\nValue Prop- Flawless Simple Design, Convert Neighbor Eyesores into functional property with minimalist design flair"
+      },
+      {
+        "name": "Coding bootcamp",
+        "description": "We will give people who are frustrated with their job and enjoy designing things skills to become a software engineer in 15 weeks\nWe will offer hard skills in HTML, CSS, JavaScript, Ruby, Ruby on Rails, and core computer science skills that startups and major tech companies want in junior software engineers\nWe will send target facebook, instagram, snapchat, and google search ads to people who are interested coding or are frustrated with their job and have come from an art or creative background or have a philosophy degree, or ux designers at tech companies\nWe will charge 17k per person per bootcamp and will offer more advanced workshops once they take the bootcamp for prices around 4k\nWe will also offer a strong career services system to help people find jobs as well as a healthy learning environment"
+      },
+      {
+        "name": "Design bootcamp",
+        "description": "We will give people who are frustrated with their job and enjoy designing things skills to become a product designer in 15 weeks\nWe will offer hard skills in UX, UI, product design, and prototyping that startups and major tech companies want in junior product designers\nWe will send target facebook, instagram, snapchat, and google search ads to people who are interested design or are frustrated with their job and have come from an art or creative background or have a philosophy degree, or ux designers at tech companies\nWe will charge 17k per person per bootcamp and will offer more advanced workshops once they take the bootcamp for prices around 4k\nWe will also offer a strong career services system to help people find jobs as well as a healthy learning environment"
+      },
+      {
+        "name": "Behavior design bootcamp",
+        "description": "We teach people who want to design consumer products the basics of how to build digital habits and change digital behavior\nWe offer 2 day workshops, letting people bring their product and goals into the workshop and leaving with tools to build behaviors to achieve their goals in their product.\nWe will send target facebook, instagram, snapchat, and google search ads to people who are interested behavior design or are product managers, or ux designers at tech companies\nWe will charge 5k per person per workshop and will offer more advanced workshops once they take the intro workshop for similar prices"
+      },
+      {
+        "name": "Teach basic tech skills to retirees",
+        "description": "We train retirees in Florida who want to connect with their kids and grandkids using technology.\nWe offer basic courses on using a smartphone, using video chat and sms, and using social media\nWe will need trainers and a classroom that can hold 5 retirees\nWe will proactively post flyers in retiree hangouts (diners, vacation areas where retirees go, etc.) as well as radio ads\nWe will charge 200 dollars a course and will over 5 different courses"
+      },
+      {
+        "name": "Online massage therapy school",
+        "description": "This is designed for the homebody, the person who dislikes leaving the house but loves to further his or her education. All you need is a highschool degree and a computer. Tests and quizzes are voluntary. Massage techniques can be practiced on family and friends. This ideal for people who are financially secure and are looking for their next hobby."
+      },
+      {
+        "name": "Wellness coaching",
+        "description": "Learn how to teach others to improve themselves. Choose from nutrition classes, physical fitness classes, meditation workshops and herb classes. After completing your coursework you will get a certificate and you’re ready to help others on their path to wellness. Scholarships and work study are available ."
+      },
+      {
+        "name": "Online Interior decorating service",
+        "description": "Much like many other industries, interior design has now made it online.  The online model allows a lower cost to our decorators and that savings gets passed on to the customer.  You get the same great ideas from professional interior designers but over Zoom. The service requires a device with a high quality camera and a wifi connection.  Our decorators are mostly professionals earning spare money on the side. Their passion for the subject creates great joy during the online consultation and they always follow up with a list of suggestions and even links to a set of partner sites where they have chosen the perfect items for the customer and at a special insider’s discount.  Advertising on sites like Zillow, Trulia, mommy blogs, home decor blogs, and PPC advertising on keywords that match searches for people who don’t necessarily know what they want create a channel for leads."
+      },
+      {
+        "name": "Shop Local App",
+        "description": "White label app for local chambers of commerce.  Too much business is leaving local stores and going to the major brands and online retailers.  The shop local app gives chambers of commerce a chance to stock an online store with goods from all of their local shops and meet customers where they are doing business.  We will need to build an app and then go door to door attending local chamber of commerce meetings. We can also look to partner with Amex who has shop local campaigns of their own."
+      },
+      {
+        "name": "Landscaping service",
+        "description": "Serving local residents a landscaping service provides yardwork for an hourly rate.  Using web services like craigslist and thumbtack along with some local advertising on ballfields and newspapers, we created our network of yards that we service.  The people on the team receives an hourly wage which is below the rate paid by the customers. Partnerships with other local businesses like sandwich shops and other town stores can create a good base for customers."
+      },
+      {
+        "name": "Gas truck",
+        "description": "The gas truck is an on-demand service that will fill your tank up with gas while it is parked in a parking lot or your driveway.  Sometimes getting gas is the last thing you have time for. With the press of a button, a call, or a form on our website, you can have gas come straight to you.  Premium charge for the service of 50 cents per gallon. Overhead is a big truck that can take gas from a station and bring it to the cars."
+      },
+      {
+        "name": "Pants truck",
+        "description": "The Key Partners will be Local Tailors, who will offer the service of Hemming, Sewing, and De-Stain Pants. This will be a lowered overhead business compared to brick and moretart and \nValue Prop- \n(Low Overhead for Biz Owner, Mobile vs. Brick and Mortar)\nConvenience for customer- Drop Off/Pick Up @ truck right outside of office high traffic building (Cities)\n\nKey Resources- \nCost Structure- Local tailor structure X +5% and $1 convenience fee"
+      },
+      {
+        "name": "Rent a Granny",
+        "description": "Bringing seniors together with families with small children for social interactions.Meetings can happen weekly or daily. There is no monetary fee, but granny will be fed by the family.The family can pick up granny or granny can drive herself. A service coordinator is necessary to match seniors with the family and keep track of the schedule. The service can be listed on social media sites,in local newspapers, parent magazines.."
+      },
+      {
+        "name": "Teach your kids to clean",
+        "description": "Key Partners-"
+      },
+      {
+        "name": "Tango Tours to BA for women only",
+        "description": "for women who want the experience to dance with an excellent dancer in the homeland of tango. Housing and breakfast daily will be provide. 4 day and 8 day trips are available. Daily milongas and dance partners are included in the trip. As well as airfare from NYC. A tango shoes shopping trip or a late night/early morning coffee shop experience can be added on."
+      },
+      {
+        "name": "Zen for new parents: this can be an app for first time parents.",
+        "description": "When parents have questions on how to handle a certain situation they can check the app for advice. A monthly fee can be charged.The app can be available in app stores. Advertising for it can be done through parent groups online."
+      },
+      {
+        "name": "Teaching pedestrians to cross the street in a straight line",
+        "description": "Is it driving you crazy when pedestrians cross in a diagonal right in front of you and you have to wait forever for them to reach the other side of the street? Now, as an impatient New York driver you can sponsor a pedestrian. You will be matched with someone you meet daily as you drive to work and you can teach them that a straight line is the faster and safer way to cross a street. For EVERYONE involved."
+      },
+      {
+        "name": "Online interactive CE classes for massage therapist in NYS",
+        "description": "LMTs in NY state have to complete 36 CEU in every 3 year period. Work schedules don’t always allow LMTs to travel to a certain location where classes are provided, and regular online classes seem impersonal and don’t provide specific personal feedback. Our classes give you personalized time with the instructor and give you feedback specific for your challenges."
+      },
+      {
+        "name": "Online interactive CE classes for Mblex certification",
+        "description": "Work schedules don’t always allow LMTs to travel to a certain location where classes are provided, and regular online classes seem impersonal and don’t provide specific personal feedback. Our classes give you personalized time with the instructor and give you feedback specific for your challenges."
+      },
+      {
+        "name": "Cook me MY meal lunches",
+        "description": "bring your groceries in the morning and a chef will prepare lunch for you. For people who love shopping for food but not cooking it. You can drop off your groceries and a chef will create a nutritious meal for you. Reservations have to be made in advance and the chef will appreciate a generous tip, and the leftovers of course."
+      },
+      {
+        "name": "Rent a puppy",
+        "description": "A platform for connecting local lonely people with the local dogs (and their owners) that will give them a some love and companionship by the hour. You can rent a puppy, the puppy (and their owner), will drive to your home, and you can spend time petting, combing, feeding and interacting with the puppy. Pet owners set their price, we take a 10% cut per each transaction. You make people happy and you get paid to do it."
+      },
+      {
+        "name": "Family Bedtime stories",
+        "description": "When parents have to work late or are on a business trip a trained childcare specialist will come to the home and read a bedtime story to their children.Parents can become members on a monthly, quarterly or yearly basis. This service can be offered/ advertised through business organizations, working parent groups, employers, childcare centers."
+      },
+      {
+        "name": "Playground animators",
+        "description": "trained childcare specialists will be at your neighbourhood playground from 9am to 3pm and interact with your children. They will encourage them to share, play with others and learn conflict resolution. Parents bring the snacks and take care of bathroom breaks for their children. Sign up online. Credit cards accepted."
+      },
+      {
+        "name": "Write me a letter",
+        "description": "For people who miss getting snail mail, people who might not have family who would write to them.A letter can be sent to them at a time frame of their choosing. The fee depends on the frequency of the service."
+      },
+      {
+        "name": "In town dolmus/ private shuttle to train station",
+        "description": "A service to bring people to and from the train station in the morning and after work. Licensed drivers will bring their minivan and pick up at dedicated street corners. Reservations need to be made ahead of time and weekly fees will be charged."
+      },
+      {
+        "name": "Bitch to me",
+        "description": "For people who feel no one has time to  listen anymore.Calls are made to a center and customers can let their worries and complaints flow. Fees are per call, but subscriptions are available.Become a VIP member to connect with your own personal listener every time you call."
+      },
+      {
+        "name": "Scent free laundromat/laundry service",
+        "description": "people with chemical sensitivities have a challenge using a regular laundromat. This laundromat uses unscented detergents only. Self service or wash and fold is available. Membership cards for regular users offer special discounts."
+      },
+      {
+        "name": "Tutoring in a truck",
+        "description": "for people who want to secretly improve their grades without telling their parents.A heated and air conditioned unmarked  truck will park in the vicinity of your home or your school. Highly trained tutors who are sworn to secrecy will deliver the subject matter of your choice. Payment will be made by credit card and the bill will look like it came from a charity."
+      },
+      {
+        "name": "Stylish compression garments for cancer survivors",
+        "description": "for women who had breast cancer and as a result have to wear compression sleeves. The colors and designs are stylish and compatible with their wardrobe. Single garments or special set prices are offered."
+      },
+      {
+        "name": "Partner massage for lay people",
+        "description": "does your partner often ask you to rub her shoulders but you don’t know how? We can help! A trained massage therapist will come to your house and show you how to give a shoulder and back massage to your partner. We bring the table, sheets and oils. You can choose from 60 minutes or 90 minutes session. Packages of 3 trainings are available for a special discount."
+      },
+      {
+        "name": "Personal training in a truck",
+        "description": "Pump You Up Dump Truck Training serves a community of work-out enthusiasts who do not have time to get to a gym.  Busy office-dwellers who can’t get away from their desks for very long rely on this innovative group exercise concept which pulls right up to the parking lot outside.  For $30 per session, the customers are able to work with the trainers and equipment supplied by PYUDT. To get the word out, PYUDT does guerilla marketing including simply driving the truck up to the front of the office.  There are office manager networks that PYUDT reps try to work with to set up trials additional sessions. Via key partnerships with food truck festivals and other local events, PYUDT stays busy on weekends too."
+      },
+      {
+        "name": "Massage in a truck/van",
+        "description": "for people who need a shoulder rub or back massage during their lunch break or after work to destress before they go home to their families.A mobile truck is only a phone call away! Relaxing or energizing essential oils can be added on to any treatment."
+      },
+      {
+        "name": "Tummy rubs",
+        "description": "for parents whose children have trouble relaxing before bedtime. A massage therapist trained in infant massage will show you how to give a simple tummy rub to your child. This is a great bonding experience and it takes the stress away.Discounts for multiple child families are available."
+      },
+      {
+        "name": "Dinner companion",
+        "description": "Don’t want to eat alone tonight? We send someone to keep you company and share a meal with you. The check is on you.\nThis service is also available for frequent business travelers. Various membership levels are available."
+      },
+      {
+        "name": "Sunday Breakfast in your home",
+        "description": "Wild night out on a Saturday?  Crazy kids waking up at 5:30 and ruining your chance for rest on the weekend?  Sunday Breakfast in Your Home is the perfect solution. Sunday Breakfast in Your Home shows up with all of the ingredients, pots, pans, and a Sonos sound system to play smooth jazz or acoustic classics while they prepare you luxurious piles of french toast or decadent omelettes.  The customer can choose from five set menus and is responsible to pay for the price of groceries, a $50 dollar fee, and tips are encouraged. Advertising on both mommy blogs and at nightclubs makes up the vast majority of leads."
+      },
+      {
+        "name": "One man’s garbage is another man’s treasure -",
+        "description": "mobile truck goods exchange for people who have things they have outgrown but which are still in good condition. A truck will come buy and you can go shopping. Bring the items you want to separate from and pick something else instead. No money is involved. Strictly bartering."
+      },
+      {
+        "name": "CPR training class",
+        "description": "CPR is not known by enough people and classes are not readily available in the right places.  Partnership with local businesses brings a CPR trainer into office buildings and other workplaces and charges $10 per person for certification."
+      },
+      {
+        "name": "Swingset assembly",
+        "description": "Parents around the country are buying swingsets and paying crazy prices to have them installed by “big swingset”.  We have rounded up a group of handy weekend warriors and retirees who love nothing more than getting their hands dirty building a swingset over the course of a saturday or sunday afternoon.  The service costs $500 for most swingsets and then an additional $100/hr after the first four hours. Swing set assemblers receive 33% of the fee and an additional 20% if they bring the job on themselves.  Tips are encouraged."
+      },
+      {
+        "name": "Adult Camp",
+        "description": "Summer sleep away camp but for adults.  Empty nesters and even those who have sent their kids to camp of their own flock to Adult Camp where you can enjoy all of the bliss of a youthful summer spent on our lake.  Weekly sessions starting at $2,500/person are all-inclusive (bug juice and chicken fingers) and include your small cot in a room full of other people. Run via renting a youth summer camp during an off week, proceeds go to the rent, food, and activities budget along with the counselors.  The summer camps where this is held help get the word out to parents of the children who normally attend them."
+      },
+      {
+        "name": "On demand creative - hourly service",
+        "description": "Most companies are stuck in their ways when it comes to creative.  In house work is too safe to make real change and going to an agency or true consultant costs too much and demands too much of a minimum.  With On-Demand Creative companies can hire professional creatives by the hour. The hardest part of this model is getting the word out and convincing people that there is value in just one or two creative hours.  We use hard ROI tracking against projects and share customer case studies in chamber of commerce meetings to show the great work our creatives have done."
+      },
+      {
+        "name": "Historical walking tours of major cities",
+        "description": "A platform to connect tourists, people who want explore their cities more, and people who want to go on interesting dates to people who really know their city well. Guides can set their own prices and our company will take a 5% cut on each booked transaction. We use social media to both target people who know their city really well and want to get out more (retirees or historical buffs) and also target people who want to explore. We have an app that people use and will automatically find your location and connect you to interest tours happening around you."
+      },
+      {
+        "name": "Real-estate office",
+        "description": "Real-estate is a key portion of the economy and a real-estate office can be opened to serve local markets.  It takes time and a little money to open your own real-estate office and during the year’s before doing so, one must build up a great set of clients so as to start a network of referrals.  Cost will be relative to decisions made on how aggressively to go after listings. It will take money to make money in this business."
+      },
+      {
+        "name": "Online Career coaching",
+        "description": "Using Zoom or some other video communication tool, online career coaching provides a stable, valuable partner in your career search.  This is potentially a difficult market since many of the customers will be those without jobs. However, it is a valuable service and in partnership with local colleges, shared workspaces, and coffee shops where workers congregate.  The coaches are all part-timers who enjoy giving advice and the business model is to charge a small fee up front and then a second larger fee upon job search completion."
+      },
+      {
+        "name": "Protein bars",
+        "description": "Key Partners- Direct to consumer\nKey Activities- Ship Bars to customer in a ultra convenient, price competitive way unparalleled to competition, The absolute best in protein bar retail \nValue Prop- More Varieties than anyone, Best Price (ultra low overhead, ECOMM, HYPER FOCUSE JUST ON BARS)\nCustomer Relationships- Automated- Automated Replenishment from customers on essentials, and automated inventory balancing/reorders from Warehouse to vendors. \nCustomer Segments- Young, Old, All lovers of BARS\nKey Resources- Technical Operations,  Inexpensive Warehousing/Logistics, Direct Vendors and alternate distirbution partner \nChannels- Ecomm, Vending \nCost Structure- Thin Margin, Match Amazon, Profit Center Around Vendor Marketing Programs, Profit Center on Customer Data Insights\nRevenue Stream"
+      },
+      {
+        "name": "Call-a-creative: Hotline to get you through writer's block",
+        "description": "Call-a-creative is a paid phone number available to struggling creatives who simply need a jolt.  Millions of people set out to do creative work every day only to hit a roadblock and give up. With C-a-C there is support available to these people.  We have staffed C-a-C with 24/7 availability. To do so we have volunteers and paid workers carry their C-a-C cell phone with them when they are “on-call”.  We get the word out through partnerships with groups like Creative Mornings and Toastmasters along with some PPC advertising to ultra targeted individuals on Twitter, Instagram, Facebook, and Linkedin.  Creatives receive a cell phone and 50% of money made."
+      },
+      {
+        "name": "Message a muse: paid text service to get you through writer's block",
+        "description": "Message a muse is a paid phone number available to struggling creatives who simply need a jolt.  Millions of people set out to do creative work every day only to hit a roadblock and give up. Sometimes creativity is too personal to speak our problems out load and Message a Muse allows for a very low engagement bar but still enough to get that little push.  With Message a muse there is support available to these people. We have staffed Message a muse with 24/7 availability. To do so we have volunteers and paid workers carry their Message a muse cell phone with them when they are “on-call”. We get the word out through partnerships with groups like Creative Mornings and Toastmasters along with some PPC advertising to ultra targeted individuals on Twitter, Instagram, Facebook, and Linkedin.  Muses receive a cell phone and 50% of money made."
+      },
+      {
+        "name": "Ad-supported online community for urban farmers",
+        "description": "Ever want to find people who enjoy rooftop or community farming as much as you do? Do you enjoy swapping growing methods, tips, and tricks? Do you want to be meet up and talk farm shop? We are the digital place for you! We are ad supported and it works like this. Come to our site, urbanfarmers.biz, create your profile, and get matched with urban farm friends! As you meet new people by swiping through topic, locations, new tip, tricks, and interesting people, we will also show you amazing deals from urban farm related products! We partner with the hottest and most innovative farm products to keep you updated what every product you need to make your urban farm incredible."
+      },
+      {
+        "name": "Peanut butter",
+        "description": "People love peanut butter but the sad truth is that most of the mass-produced peanut butter found in the grocery store is loaded with added sugar.  “Choosy moms choose Jif” is a thing of the past as mothers become more health conscious for their children. An all natural peanut butter is as simple to make as having industrial food mixers and access to peanuts.  To sell the peanut butter we will start with natural food stores, local farmer’s markets, and word of mouth at our kids’ schools. Over time we will try to leverage key partnerships with other similar products - natural honey makers, natural oils, etc… for joint distribution."
+      },
+      {
+        "name": "Midnight massages",
+        "description": "for stage performers ,actors, dancers, musicians who have live performances in the late evening hours. They are not tired enough to go to bed and their bodies ache from the excertion on stage. We bring massage to you even if it’s after 10 pm."
+      },
+      {
+        "name": "Mobile healthcare for homeless people",
+        "description": "a healthcare van staffed with nurses and doctors drives through neighbourhoods on certain days of the week. No appointments necessary. First come first serve basis. Homeless people  can get check ups, receive wound care, get medications. Specialists will be available once a month."
+      },
+      {
+        "name": "Mobile naps- (Nappy On The Spot)",
+        "description": "Nappy on the spot offers the tired a sound proof, clean dark super comfortable nap pod, equipped with the essential nap supporting equipment(aroma therapy, special lighting, Relaxing music, temperature, Bed Softness, Guided Sleppy meditation…..Preselect your napping experience to be ready for when your name gets called and cycled in…..\nKey Partners- Multi-Day Music Events, Trade Shows, (SXSW)  Corp Office Park, Wedding Venues, College Academic Buildings, Project Sites-\nKey Activities- Offer Napping Pods in underserved napping areas…..Loud Place, Stressful, busy place such as trade shows, \nValue Prop- You deserve a nap, and you want one now! (stamps foot and pouts)\nCustomer Relationships- \nCustomer Segments-Venues\nKey Resources- Equipment (Nap POD) - Transportation of POD, Sales Team, Demo Area \nChannels\nCost Structure- Venue Rent by Day, Week, Month or OWN…..Or pay as you go (\nRevenue Stream (Sponsors Paid)- Customer Paid…..Hybrid, offeset customer nap cost via sponsor…...AD fee- Sublimial Advertising During Nap…..(Buy Coke)"
+      },
+      {
+        "name": "Meet up for coffee lovers for people who want to talk about coffee all the time.",
+        "description": "Tour different coffee roasters and coffee shops, drink as much as you like and talk about roasting methods, growing methods and brewing methods.Each month there is a different coffee expert available for answering your questions. Special passes for out of towners av"
+      },
+      {
+        "name": "Afternoon in my house - invite a homeless child to stay with you after school",
+        "description": "Using our app, stay-at-home parents can invite a child in need that is in our system into your home. They can meet your children, have dinner together, and get to make a new friend. This is a non-profit that also takes donations to provide people who participate in hosting these sessions with free food, discounts on items like clothing, toiletries, and non perishable items that they can use once they buy some for the child in need as well."
+      },
+      {
+        "name": "Rent your private estate to weddings…",
+        "description": "Think AirBnB for your beautiful home or land. We are a platform that connects high end home and estate owners high end wedding parties. We take a cut for each booking made. We partner with lots of people in the wedding process (florists, cooks, pastry chefs, wedding planners, cleaning services, bar tenders, food servers, etc.) and can offer packages to book so that your estate is well taken care of and you don’t have to do anything on either side. Both parties win, the wedding party just shows up,  has a great time, and the host doesn’t have to do anything, including clean or worry about collecting payment."
+      },
+      {
+        "name": "Happy feet - foot baths for homeless women",
+        "description": "Happy feet is a foot bath product. Mothers who are pregnant, people who have foot problems, and people would like to feel pampered and relaxed buy this product. For every foot bath sold or every time someone posts a video of themselves using our footbath, we add an an extra “free footbath” use to all of the locations in all major cities that are only for use by homeless people. We have a live feed on our website and on social media of people both using the “free footbath” stations and each free footbath use features the person who made it possible and way for the homeless person to say thank you."
+      },
+      {
+        "name": "Kitchen talks- herb and aromatherapy classes for the neighbourhood",
+        "description": "Scent is vital to happiness.  With Kitchen talks you can learn about different kitchen aromas while also getting the relaxing benefit of having them in your home.  This is a multi-level marketing model where a “host” invites others into his/her home to learn about the different herbs and their value both in cooking and in aromatherapy, and sells herbs which are sent via mail in 1-2 weeks."
+      },
+      {
+        "name": "Stylist in your home",
+        "description": "What should I wear today? I hate everything I own.  Ever have that feeling at the start of the day? Using SYH you can have a stylist come to your house on-demand and pick your outfit.  Stylists stay and make you five more outfits for every engagement so you go out that day, sure you will conquer the whole week. Consulting is $25 per visit and a dollar per minute after the first 20 mins.  Consultants are working professionals with side gigs who love fashion."
+      },
+      {
+        "name": "Infant/Toddler clothing exchange",
+        "description": "NetFlix Of Kiddie Clothes- Pay Per Month children's clothing exchange. Choose form variety of colors, patterns, sizes based on your childs growth. Never buy clothes, lease them and when done drop in the mail where they will be professionally cleaned (or tossed) and receive your next outfit……\n\nKey Partners- Clothing Manufacturer, Private Label- No Brand Names- Just High Volume Purchasing Power….\nKey Activities- Lease Clothes, Limited Selection, High Quality/Comfy, Affordable and Cute…..IKEA \nValue Prop- No Stores, No Middle Man Margin, Cost Efficient Clothing, Sustainable- no wasted resources or challnege of find new clothes or home for exisiting ones\nCustomer Relationships- Tap into parenting communities, Automated Web Based Ordering\nCustomer Segments\nKey Resources\nChannels- Parenting Mags, Doctor Offices, Multi-Level Marketing (sign up your friend and make money, or get discount)\nCost Structure\nRevenue Stream - Subscription Fees, and Option to purchase lease, or new set. ADS for other children centric products"
+      },
+      {
+        "name": "Karaoke parties for your office celebrations",
+        "description": "Office Karaoke is different from normal Karaoke in that along with your run of the mill singing pop songs, we offer Slide-Deck Karaoke, where random slides are put up on a screen and the participant must give a business presentation against those slides.  The model is to send a facilitator who brings a computer with tools for both singing and slide-deck Karaoke, along with a microphone and speaker. There is very little overhead in this small 1-2 person business owned and operated by passionate business karaoke facilitators.  Word of mouth is very strong for this business and it makes 75% of its money in the busy Christmas Party season."
+      },
+      {
+        "name": "Vegan snacks vending machines",
+        "description": "We provide a vending machine filled with delicious vegan treats. This is great for schools and offices with health conscious employes. All snacks are organic and nutritious and affordable."
+      },
+      {
+        "name": "Build your personal brand camp",
+        "description": "An intensive three day boot camp to give you the tools you need to build your personal brand.  This includes online brand building but also how to uniquely tell your own story. Room and board are included in a package that costs 10,000 per person."
+      },
+      {
+        "name": "Watch a movie with me - post movie discussion included",
+        "description": "No one is leaving their home to watch movies anymore and enjoying films has become a lonely endeavour.  Many people long for the interactive feel of going to the movies but not enough to pay the extra money or leave their home.  With Watch with Me, the free to download, ad-supported app on iPhone or Android, you can watch alongside a friend or even a stranger.  PPC advertising on other mobile apps that are ad-supported creates the app downloads and mobile notifications are used to encourage people to watch movies that fit their profile when they become available."
+      },
+      {
+        "name": "Take the stress out of Thanksgiving Travel - tell us where and when and we”ll get you there",
+        "description": "The picture of John Candy on the website says it all.  Holiday travel can be very stressful and sometimes impossible.  Our luxury coaches get you wherever you need to be, in complete dark, and without your having to view or experience the traffic.  We start with a blacked out SUV, fully retrofitted for comfort. You have your choice of movies, wifi, on-demand TV, or car friendly games to play with the family.  Let our drivers worry about the honking of horns while you enjoy the soundproofing of the luxury coach. Start-up costs are the vehicle plus retrofitting and paying the drivers.  The price to the customer is rather expensive but similarly priced with a high-scale limousine ride. Channels for sales come from radio ads before the holidays, PPC advertising on google, and flyers posted around town at the right time of year."
+      },
+      {
+        "name": "Free sock dispensaries for homeless people",
+        "description": "This non-profit is funded by donors and takes advantage of a partnership with local municipalities to add sock dispensaries to the exteriors of city halls, fire stations, police stations, and other publicly owned settings.  All work is done by volunteers."
+      },
+      {
+        "name": "Biodegradable underwear for campers",
+        "description": "For the outdoor enthusiast who likes to spend weeks in the wild but doesn’t want to carry a ton of stuff and doesn’t think wearing undies twice is desirable. Available in rainbow colors or with nature designs.Weekly supply sizes or economy packs are available."
+      },
+      {
+        "name": "Laundry service for homeless people",
+        "description": "You can help a homeless person even if it’s not thanksgiving. Volunteer to do the laundry once a month.You can surprise your person by choosing a lovely scented lavender detergent and you can thrill them especially if you do the ironing too.Special recognition dinners are organized for volunteers who help at least 3 homeless people."
+      },
+      {
+        "name": "Pay for meals around you for homeless people to pick up",
+        "description": "Localized Crowd Funding down a specific block, square mile, or city to funnel cash toward feeding hungry/homeless folks in a streamlined model.\nValue Prop- Feed People Indirectly, not put on the spot when busy to offer cash/food - Passive Positivity\nKey Resources- Donations, impromptu, or subscription. Access to food, primarily donation based - Super Markets/Food Banks, Deliveery Vehicles, and Stash Spots for people to pick up abnd redistribute, Certidied Kitchen Space (legality)"
+      },
+      {
+        "name": "T-shirts that visualizes via a graphic where you spend your time on the internet",
+        "description": "America is brand crazy.  Walk around any city and you’ll see T-shirts emblazoned with any number of logos: sports teams, bars, apparel brands, films, tv shows, characters, etc… And yet, there are very few people “repping” the places where they spend the highest amount of their time.  Connected t-shirts not only allow people to start showing off and showing up for the brands they love online but it goes a step further and uses actual usage data to decide what to show. The ultimate geek/nerd/techie/everyman apparel retails for $49.99. It is made of cotton and has a small sewn in usb port and microchip which we make for $15 dollars at scale.  We sell online, and in partnership with Amazon, Apple, Google, Facebook, and Twitter, who are each also buying meta-data from us."
+      },
+      {
+        "name": "Connect old people with young people to give them life advice",
+        "description": "Retirees looking for more to do are paired with younger people who need advice on their careers, family, casual finance problems, or any other issue where with age comes experience and wisdom.  Many of these younger people are too afraid to expose themself to their own network for fear of admitting they don’t know but would seek the sage advice of a wise stranger. This two-sided marketplace is enabled by partnership with nursing homes where participation is an elected activity and by a mobile app where the highly tech literate advice seekers can get matched up.  The creation of the mobile app and the set up of the technology along with ease of use training inside the nursing homes are the high hurdles. Advice seekers pay a fee for the service in 15 minute chunks. Prices may surge for certain times of day or especially great advice givers."
+      },
+      {
+        "name": "Sell glow in the dark hat rims",
+        "description": "Sold both in tourist shops in Miami and in camping stores, glow in the dark hat rims easily click onto the bottom of any normal sized baseball style cap brim.  To make a glow in the dark hat rim it is fairly cheap, essentially the cost of a glow stick and a paper clip. Do to their usefulness and novelty in club and camping settings, we get a premium for the brand, charging $6.99 per cap.  The American Camping Association seal on the package along with partnerships with local DJs create two great avenues for the brand’s expansion."
+      },
+      {
+        "name": "Low overhead- Inside Sales Brokerage",
+        "description": "A Lean and Efficient Model of sales brokerage (Independent Grocery)  HYPER FOCUSED on Inside TeleSales, Web Ordering, And Automated Ordering…..Reducing Travel Time/Travel Overhead...Getting More Done in less time at a very competitive commission structure compared to outside sales brokerages.\n\nKey Resources- \nConsultants- Tech Operational efficieny and Remote Sales Experts \nFriendly Phone Jockey Telesales Force- Incentivised by hourly pay & performance incentives, flexible working conditions, etc. \nChannel- Independent Natural/Specialty Grocery Stores. INFRA- Independent Natural Food Retailers Association, National Cooperative Grocery Assocation (600+ accounts- Billions in annual sales \nRevenue Streams- Monthly Retainer/Fee and Commision. Additional Services Ala Cart - data & consulting/coaching.\nCustomer Relationship - Introduce time & cost saving automations to sales broker and retialer purchasing process. \nVALUE - More Efficient, Less Costly, Happier Customer (retailker) Happier Client (manufacturer)"
+      },
+      {
+        "name": "Dehydrated - Travelable Just Add Water Healthy Snacks",
+        "description": "Portable Snack, Beyond Bar\nReady to eat meal, but simpier and less gross\nChannel- Retail grocery, Ecomm, Airport, \nLight- Cost Savings on Shipping/freight"
+      },
+      {
+        "name": "T-Shirts with embedded QR codes for lost children",
+        "description": "Losing a child in a store, mall, park, or other public place is a terrifying prospect to most parents.  Having and embedded QR code in shirts that immediate call their cell phone, gives some solace to worried parents.  QR codes do not cost anything more than any other kind of custom printing on a shirt and therefore are relatively inexpensive to create, even without total mass-production.  QR codes inside of dragons, dinosaurs, princess crowns, etc… allow for the shirts to seem like fun, normal shirts to these wandering children. Sold online via PPC and affiliate advertising on many blogs and websites.  Will go after partnership with organizations that help parents of particularly prone to wander children - ADD, etc..."
+      },
+      {
+        "name": "Edible maps",
+        "description": "What better way to teach your american children geography that through yummy snack-maps! Snap-maps are colorful, delicious, and nutritious detailed and accurate maps of different parts of the world. Some are maps of cities, some are maps of countries, come are maps of ocean currents, etc. We target parents who want to educate their children in a fun way. We partner with grocery stores, as well as sell our product on amazon and our own website. We partner with a fruit roll-up manufacturing company and a machine shop who works with our in-house designer and cartographer to create amazing and educational snack-maps. We sell a box of 10 snack maps for $12.00 and we have multiple snack-map-packs. Once people buy one, they enjoy the experience so much, snack-maps become part of their daily snack life."
+      },
+      {
+        "name": "Sippy cups for husbands",
+        "description": "Some husbands are sports enthusiast and forget everything when they watch a  game.To help them stay neat during the exciting parts of the game get the “sippy cup for husbands”.It keeps the couch clean and their shirts spotless. Monogramming is available in most team logos. It’s been known to save a marriage or two."
+      },
+      {
+        "name": "Rent a walking companion",
+        "description": "for people who like to be active outdoors and cover long distances but don’t want to do that alone. You can choose between a conversationalist or a quiet thinker. Short walks or long distance enthusiast are available to accompany you on weekends or weekdays."
+      },
+      {
+        "name": "Learn mechanical engineering concepts by building them using legos",
+        "description": "This is an excellent tool to develop your spatial thinking. Building blocks come in many colors and sizes. Bigger blocks are perfect for young children to help them develop good eye-hand coordination."
+      },
+      {
+        "name": "Sloppy joe machine",
+        "description": "Made up of a cooled compartment to keep the meat and sauce at a safe temperature when not in use and a second chamber which uses high intensity heat to create the sloppy joe filling.  For only 3.99 a user waits under two minutes for a fresh sloppy joe."
+      },
+      {
+        "name": "3D printed shoes",
+        "description": "3D printed shoes are exciting both for their functionality as well as their novelty.  Using mall kiosks the 3D Shoe Store offers the novelty of build-a-bear, the customizability of Nike iD, and maximum comfort based on a unique shoe forming technology.  To get set up, each kiosk must be rented and equipped with a Carbon 3D printer. The cost to the customer is supplies plus 50 dollars putting it on the high side of the market for shoes.  Novelty and ability to customize play a big role in bringing the customer in."
+      },
+      {
+        "name": "Slip and slide for your pet turtle",
+        "description": "Turtles are slow and the secret is… they hate it.  With a turtle slip and slide for only 19.99 you can give your pet turtle the thrill of a lifetime and make sure he or she gets to dinner on time.  Sold on the pet network infomercial style."
+      },
+      {
+        "name": "Pizza button (instant pizza to wherever you are with the tap of a button)",
+        "description": "Pizza button takes the concept of the Amazon pods or Dominoes app and brings it to the mom & pop pizza shops across the US.  Pizza button is a small plastic button which can be paired with the Pizza Button app. Inside the app, you can sync to your favorite participating pizza shop and put in your “go-to” order.  Your user profile, address, and “go-to” order are saved in the app, which quickly places the delivery using an API from Seamless, GrubHub, or Yelp. Pizza shops give a small commission to Pizza Button and the service is free to the end user, who gets more pizza, faster.  Yum."
+      },
+      {
+        "name": "Send a hug (hug delivery on demand)",
+        "description": "The best part of Send-a-Hug is the send-a-hug network.  Finding individuals in every major city in the US who love giving hugs was the easy part.  Once we had that we simply needed to build an uber-esque app to handle the hug requests and alert the network to where their next hug will be.  Huggers do it for free (they are vetted and background checked) and those sending a hug pay a small one-time fee of $10, which allows us to maintain the app.  Bulk packaging is available."
+      },
+      {
+        "name": "Wrestle club (sign up to wrestle a stranger once a week)",
+        "description": "Like fight club but safer.  Sign up to wrestle a stranger and test yourself against other locals who need to get some rage out.  We provide a referee, safety helmets, and a venue. Revenue comes from concession sales to spectators and attendees.  Apparel sales are high high profit center especially including the exclusive winners only collection which are only available for sale to those who compete and win.  Partnerships with elks, VFA, and other associations gives free space as well as a good network to pull customers from."
+      },
+      {
+        "name": "Snuggle club (sign up to cuddle a stranger once a week)",
+        "description": "Like fight club but way way safer.  Sign up to cuddle with a stranger once per week.  A tinderlike app allows users to pair up for snuggles.  Unlike tinder, expectations are known by both parties up-front leading to a much safer scenario for both parties.  Revenue comes from ad support inside of the app."
+      },
+      {
+        "name": "Designated Driver on demand",
+        "description": "The key to this business is a foldable scooter so the driver can drive your car home.  Partnerships with the new scooter networks in the bay area enable our drivers to get wherever they need to be quickly and safely.  DD service is $20 a ride and $2 per mile after that. MADD is assisting in getting the word out and bartenders across town have the app pre-installed because it saves them on liability."
+      },
+      {
+        "name": "Office petting zoo",
+        "description": "Studies show that exposure to cute animals can increase happiness.  Many employers are looking for ways to increase positivity and employee morale without also taking too much time away from getting work done.  Companies will pay 500 for a two hour session with our two goats, four bunnies, a duck, and two little chicks to come into their office and delight their workers.  ROI studies show that Office Petting Zoo boosts productivity for up to two weeks."
+      },
+      {
+        "name": "Urban parkour classes",
+        "description": "A mix between a fitness class, a martial arts class, and a walking tour, Parkour classes charge $30 just like a spin or Barry’s Boot Camp but meet outside like a bootcamp.  Teachers are in charge of finding interesting places in the city to jump on and off of things and develop a program to share with each class based on the essentials of Parkour."
+      },
+      {
+        "name": "Scratch and sniff clothing",
+        "description": "Ever want to experience a different way to keep your clothes clean? Or would you like to have your clothing smell like anything you can imagine? Say hello to scratch and sniff clothing! The clothing is durable, re-scratchable and sniffable up to 1000 times, fashionable, and comfortable. Our target audience is teenage boys, recreational drug users, and people who don’t like washing their clothing. We have an in house team that designs the scratch and sniff chemical and release systems and we partner with a japanese textile company to manufacture our clothing line and we sell on our own ecommerce platform we maintain ourselves."
+      },
+      {
+        "name": "Custom potato chips (you can send us 10+ photos and they will be printed randomly onto each potato chip in a bag of potato chips)",
+        "description": "While expensive to develop and set up the machinery for this business, once it exists the only cost is marketing and potatoes.  The machine is set it and forget it and the digital images can be uploaded well in advance. A huge hit at bar-mitzvahs, weddings, retirement parties, and other special occasions, marketing is done in PPC advertising against other novelty item keywords.  Eventually we may pursue a partnership with Frito-Lay."
+      },
+      {
+        "name": "Gourmet food for pets",
+        "description": "Food fit for the most discerning pet owner’s palet.  At a cost of only 40% more than normal pet food, the mush has better ingredients that you can be proud to feed fluffy.  Sold at farmers markets and natural food stores. To gain traction, we sponsor local pet events and work with some doggy daycares."
+      },
+      {
+        "name": "Call a stranger and just cry",
+        "description": "1800-Complain\nValue Prop- We all need someone to listen to us, or our family (so we dont have to) Answered by a real person who asks a few questions, lets you rant, agrees and empathizes with everything you say\nRevenue Stream- Prepaid Giftcards based on duration of time desired"
+      },
+      {
+        "name": "A cell phone that just calls 3 phone numbers",
+        "description": "No one wants to be the first parent to spoil their kid with a cell-phone and yet cell-phones are an incredible safety tool for kids just entering the earliest days of independence.  With an inexpensive, boring phone that only calls three numbers, you can keep kids safe right now, without worrying about online bullying, screen time, and the many other troubles of cell phone usage until some future time.  3 number phones are sold in partnership with verizon and AT&T and utilizes refurbished phones from yesteryear."
+      },
+      {
+        "name": "Flavored cups",
+        "description": "you add water to them and the cup itself flavors the water. The cups come in various flavors and sizes. After you drink the water you can nibble on the cup.This is an excellent way to boost your health with nutritious minerals and vitamins and prevent more garbage in the landfills."
+      },
+      {
+        "name": "Bark Collar For Crickets",
+        "description": "Jimney Got You Down? The sothing sound of nature, not so soothing?\nRevenue Stream- Monthly Service fee for leasing bark collars, option to purchase. Additional revenue steam of turning the dead crickets in cricket protein, in the name of sustainable food. \nChannel- Eccom- you can find ANYTHING online. \nKey Partnerships- Partner with pest control services as an upsell service"
+      },
+      {
+        "name": "Random Business Idea Generator",
+        "description": "Website to generate business ideas, randomly in the unlikely event you need to come up with just shy of 100 ideas. \nRevenue Stream- Venmo\nChannel- Alternative Education \nKey Resources- Brilliant Cohorts\nValue Prob- Sleep"
+      },
+      {
+        "name": "Stranger Compliments for Hire-",
+        "description": "A service in which you can pay to have someone stalk out a friend in need, and randomly compliment them, or strike up conversation which designed to lead them to a revelation on knowing how awesome they are."
+      },
+      {
+        "name": "Taco Vending Machine-",
+        "description": "Fresh ingredients of your choosing assembled on the spot into a corn tortilla. Low overhead, \nKey Resource Someone to fill the machine with fresh ingredients\nValue Proposition- Taco even more convenient.\nRevenue- Product Features Ad Vehicle- Salsa brands, and Payment for tacos."
+      },
+      {
+        "name": "Ant Army House Cleaning-",
+        "description": "Why get a roomba when you can release a professionally trained group of ants to scour your floors for crumbs, and return every last bit into a pile in the outside your door. Unlike a Roomba these little buggers don’t need to plugged in EVER, and they procreate so you always have a fresh group come spring time. The cost is a one time upfront fee for the set of ants assuming you dont step on too many."
+      }
     ];
     const nameEl = document.getElementById('name');
     const descEl = document.getElementById('description');
